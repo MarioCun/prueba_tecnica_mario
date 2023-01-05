@@ -1,4 +1,9 @@
+//? importaciones de terceros
 import 'package:flutter/material.dart';
+
+//? importaciones Propias
+import 'package:prueba_tecnica/constants.dart';
+import 'package:prueba_tecnica/widgets/widgets.dart';
 
 class HomeScreen extends StatelessWidget {
 
@@ -8,10 +13,16 @@ class HomeScreen extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-         child: Text('HomeScreen'),
-      ),
+    return  Scaffold(
+      appBar: _appBarHome(),
+      body: const HomeScreenBodyWidget()
+    );
+  }
+
+  AppBar _appBarHome() {
+    return AppBar(
+      backgroundColor: pPrimarycolor,
+      elevation: 0,
     );
   }
 }
