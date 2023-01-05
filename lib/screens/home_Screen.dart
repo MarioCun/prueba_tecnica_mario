@@ -14,15 +14,8 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      appBar: _appBarHome(),
-      body: const HomeScreenBodyWidget()
-    );
-  }
-
-  AppBar _appBarHome() {
-    return AppBar(
-      backgroundColor: pPrimarycolor,
-      elevation: 0,
+      body: const HomeScreenBodyWidget(),
+      bottomNavigationBar: BotomNavigatorWidget(),
     );
   }
 }

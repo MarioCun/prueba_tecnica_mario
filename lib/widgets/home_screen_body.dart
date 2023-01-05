@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:prueba_tecnica/constants.dart';
+import 'package:prueba_tecnica/ui/ui.dart';
+
 
 class HomeScreenBodyWidget extends StatelessWidget {
    
@@ -13,15 +15,19 @@ class HomeScreenBodyWidget extends StatelessWidget {
     return  Column(
       children: [
         SizedBox(
-          height: size.height * 0.18,
+          height: size.height * 0.25 ,
           child: Stack(
             children: [
 
               Container(
-                height: size.height * 0.18 - 25,
-                decoration: const  BoxDecoration(
-                  color: pPrimarycolor,
-                  borderRadius: BorderRadius.only(
+                height: size.height * 0.25 - 25,
+                decoration:  BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [
+                      pPrimarycolor.withOpacity(1),
+                      pPrimarycolor.withOpacity(0.5)
+                    ]),
+                  borderRadius: const   BorderRadius.only(
                     bottomLeft: Radius.circular(25),
                     bottomRight: Radius.circular(25)
                   )
@@ -40,11 +46,30 @@ class HomeScreenBodyWidget extends StatelessWidget {
                     borderRadius: BorderRadius.circular(15),
                     boxShadow: const [
                       BoxShadow(
-                        color: Colors.black,
-                        offset: Offset(0, 5)
-
+                        color: Colors.black54,
+                        offset: Offset(0, 5),
+                        blurRadius: 10
                       )
                     ]
+                  ),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 20),
+                          child: TextFormField(
+                            decoration: const InputDecoration(
+                              icon: Icon(Icons.search, size: 30),
+
+                              hintText: 'Search',
+                              hintStyle: TextStyle(fontSize: 20),
+                              enabledBorder: InputBorder.none,
+                              focusedBorder: InputBorder.none
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 )
               )
