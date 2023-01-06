@@ -18,21 +18,8 @@ class HomeScreenBodyWidget extends StatelessWidget {
         children: [
           HeaderBodyWidget(size: size),
 
-         SingleChildScrollView (
-          scrollDirection: Axis.horizontal,
-            child: Row(
-              children: const [
-                CardProductWidget(imagen: 'assets/hombre.jpg', title: 'E-commerce',),
-                CardProductWidget(imagen: 'assets/hombre.jpg', title: 'E-commerce',),
-                CardProductWidget(imagen: 'assets/hombre.jpg', title: 'E-commerce',),
-                CardProductWidget(imagen: 'assets/hombre.jpg', title: 'E-commerce',),
-                CardProductWidget(imagen: 'assets/hombre.jpg', title: 'E-commerce',),
-              ],
-            ),
-          ),
+         const _SliderHome(),
     
-           
-         
           
           _TargetCenter(size: size),
 
@@ -47,6 +34,28 @@ class HomeScreenBodyWidget extends StatelessWidget {
         ],
       ),
     );
+  }
+}
+
+class _SliderHome extends StatelessWidget {
+  const _SliderHome({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView (
+     scrollDirection: Axis.horizontal,
+       child: Row(
+         children: const [
+           CardProductWidget(imagen: 'assets/hombre.jpg', title: 'E-commerce',),
+           CardProductWidget(imagen: 'assets/hombre.jpg', title: 'E-commerce',),
+           CardProductWidget(imagen: 'assets/hombre.jpg', title: 'E-commerce',),
+           CardProductWidget(imagen: 'assets/hombre.jpg', title: 'E-commerce',),
+           CardProductWidget(imagen: 'assets/hombre.jpg', title: 'E-commerce',),
+         ],
+       ),
+     );
   }
 }
 

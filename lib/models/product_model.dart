@@ -1,76 +1,68 @@
-
 import 'dart:convert';
 
+List<ProductsModel> productsModelFromJson(String str) =>
+    List<ProductsModel>.from(
+        json.decode(str).map((x) => ProductsModel.fromJson(x)));
+
+String productsModelToJson(List<ProductsModel> data) =>
+    json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
+
 class ProductsModel {
-    ProductsModel({
-        required this.id,
-        required this.title,
-        required this.price,
-        required this.description,
-        required this.category,
-        required this.image,
-        required this.rating,
-    });
+  ProductsModel({
+    this.id,
+    this.title,
+    this.price,
+    this.description,
+    this.category,
+    this.image,
+    this.rating,
+  });
 
-    int id;
-    String title;
-    double price;
-    String description;
-    Category category;
-    String image;
-    Rating rating;
+  final int? id;
+  final String? title;
+  final double? price;
+  final String? description;
+  final String? category;
+  final String? image;
+  final Rating? rating;
 
-    factory ProductsModel.fromJson(String str) => ProductsModel.fromMap(json.decode(str));
-
-    String toJson() => json.encode(toMap());
-
-    factory ProductsModel.fromMap(Map<String, dynamic> json) => ProductsModel(
+  factory ProductsModel.fromJson(Map<String, dynamic> json) => ProductsModel(
         id: json["id"],
         title: json["title"],
         price: json["price"].toDouble(),
         description: json["description"],
         category: json["category"],
         image: json["image"],
-        rating: Rating.fromMap(json["rating"]),
-    );
+        rating: Rating.fromJson(json["rating"]),
+      );
 
-    Map<String, dynamic> toMap() => {
+  Map<String, dynamic> toJson() => {
         "id": id,
         "title": title,
         "price": price,
         "description": description,
         "category": category,
         "image": image,
-        "rating": rating.toMap(),
-    };
+        "rating": rating!.toJson(),
+      };
 }
-
-enum Category { MEN_S_CLOTHING, JEWELERY, ELECTRONICS, WOMEN_S_CLOTHING }
-
-
 
 class Rating {
-    Rating({
-        required this.rate,
-        required this.count,
-    });
+  Rating({
+    this.rate,
+    this.count,
+  });
 
-    double rate;
-    int count;
+  final double? rate;
+  final int? count;
 
-    factory Rating.fromJson(String str) => Rating.fromMap(json.decode(str));
-
-    String toJson() => json.encode(toMap());
-
-    factory Rating.fromMap(Map<String, dynamic> json) => Rating(
+  factory Rating.fromJson(Map<String, dynamic> json) => Rating(
         rate: json["rate"].toDouble(),
         count: json["count"],
-    );
+      );
 
-    Map<String, dynamic> toMap() => {
+  Map<String, dynamic> toJson() => {
         "rate": rate,
         "count": count,
-    };
+      };
 }
-
-
