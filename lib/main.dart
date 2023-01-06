@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Prueba Peacedev',
-      initialRoute: LoginScreen.nameroute,
+      initialRoute: HomeScreen.nameroute,
       routes: {
        HomeScreen.nameroute : (context) => const HomeScreen(),
        ApiScreen.nameroute : (context) =>  ApiScreen(),

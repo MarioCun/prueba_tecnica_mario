@@ -48,11 +48,11 @@ class _SliderHome extends StatelessWidget {
      scrollDirection: Axis.horizontal,
        child: Row(
          children: const [
-           CardProductWidget(imagen: 'assets/hombre.jpg', title: 'E-commerce',),
-           CardProductWidget(imagen: 'assets/hombre.jpg', title: 'E-commerce',),
-           CardProductWidget(imagen: 'assets/hombre.jpg', title: 'E-commerce',),
-           CardProductWidget(imagen: 'assets/hombre.jpg', title: 'E-commerce',),
-           CardProductWidget(imagen: 'assets/hombre.jpg', title: 'E-commerce',),
+           CardProductWidget(imagen: 'assets/logoverde.png', title: 'E-commerce',),
+           CardProductWidget(imagen: 'assets/logoverde.jpg', title: 'E-commerce',),
+           CardProductWidget(imagen: 'assets/logoverde.jpg', title: 'E-commerce',),
+           CardProductWidget(imagen: 'assets/logoverde.jpg', title: 'E-commerce',),
+           CardProductWidget(imagen: 'assets/logoverde.jpg', title: 'E-commerce',),
          ],
        ),
      );
