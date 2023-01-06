@@ -2,8 +2,8 @@
 import 'package:flutter/material.dart';
 
 //? importaciones Propias
-import 'package:prueba_tecnica/constants.dart';
 import 'package:prueba_tecnica/widgets/widgets.dart';
+import 'componets/home_screen_body.dart';
 
 class HomeScreen extends StatelessWidget {
 
@@ -13,8 +13,8 @@ class HomeScreen extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-      body: const HomeScreenBodyWidget(),
+    return  const Scaffold(
+      body:  HomeScreenBodyWidget(),
       bottomNavigationBar: BotomNavigatorWidget(),
     );
   }
