@@ -33,7 +33,7 @@ class _ContainerRow extends StatelessWidget {
   Widget build(BuildContext context) {
     return
     Container(
-      margin: const EdgeInsets.all(5),
+      margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
       width: 88,
       height: 105,
       decoration:   BoxDecoration(

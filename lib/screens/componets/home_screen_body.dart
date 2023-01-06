@@ -19,6 +19,7 @@ class HomeScreenBodyWidget extends StatelessWidget {
           HeaderBodyWidget(size: size),
     
           const CardProductWidget(),
+         
           
           _TargetCenter(size: size),
 
@@ -27,6 +28,18 @@ class HomeScreenBodyWidget extends StatelessWidget {
           const GripViewWidget(),
     
           const _TextTitle(text: 'Trending Today',),
+
+          Container(
+            margin: const EdgeInsets.symmetric(horizontal: 23, vertical: 10),
+            height: size.height * 0.2,
+            width: double.infinity,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              color: pPrimarycolor
+            )
+            ,
+
+          )
 
         ],
       ),
@@ -71,7 +84,6 @@ class _TargetCenter extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(30),
-      margin: const EdgeInsets.only(top: 15),
       width: double.infinity,
       height: size.height * 0.13,
       color: pPrimarycolor,

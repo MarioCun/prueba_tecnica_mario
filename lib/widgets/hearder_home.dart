@@ -31,12 +31,60 @@ class HeaderBodyWidget extends StatelessWidget {
                 bottomRight: Radius.circular(25)
               )
             ),
-            child: Stack(
-              children: [
-                Container(
+            child: Container(
+              margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+              width: size.width * 0.92,
+              height: size.height * 0.25 ,
+              child: Column(
+                children: [
                   
-                )
-              ]),
+                  Row(
+                    children: [
+                      const Text(' 11:00 AM', style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.w400),),
+
+                      Expanded(child: Container()),
+
+                      const Icon(Icons.signal_cellular_4_bar, color: Colors.white,),
+                      const SizedBox(width: 5),
+                      const Icon(Icons.network_wifi, color: Colors.white,),
+                      const SizedBox(width: 2),
+                      const Icon(Icons.battery_5_bar, color: Colors.white,),
+                      const SizedBox(width: 2),
+                    ],),
+
+                  const SizedBox(height: 20),
+
+                  Row(
+                    children:   [
+                      const Text(' HI PEACEDEV!', style: TextStyle(color: Colors.white, fontSize: 25, fontWeight: FontWeight.w900),),
+
+                      Expanded(child: Container()),
+
+                      const Icon(Icons.notifications, color: Colors.white,),
+                      const SizedBox(width: 20),
+                    ],),
+                  
+                  const SizedBox(height: 10),
+
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: const [
+
+                     Icon(Icons.place, color: Colors.white, size: 35,),
+                    
+                     
+                     SizedBox(width: 5),
+                     Text('COMSATS', style: TextStyle(color: Colors.white, fontSize: 17, fontWeight: FontWeight.w600),),
+                     SizedBox(width: 5),
+                     Text('university islamabad', style: TextStyle(color: Colors.white, fontSize: 17, fontWeight: FontWeight.w300),),
+
+
+                    ],)
+
+                ],
+              ),
+              
+            ),
           ),
 
          const _SearhButom()
