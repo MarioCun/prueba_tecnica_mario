@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:prueba_tecnica/constants.dart';
 import 'package:prueba_tecnica/ui/ui.dart';
+import 'package:prueba_tecnica/widgets/widgets.dart';
 
 
 class HomeScreenBodyWidget extends StatelessWidget {
@@ -86,7 +87,9 @@ class HomeScreenBodyWidget extends StatelessWidget {
                   ))
               ])
             ,
-          )
+          ),
+
+          GripViewWidget()
     
         ],
       ),
