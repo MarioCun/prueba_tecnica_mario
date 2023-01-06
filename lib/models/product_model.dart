@@ -1,11 +1,3 @@
-// To parse this JSON data, do
-//
-//     final productsModel = productsModelFromMap(jsonString);
-
-// To parse this JSON data, do
-//
-//     final productsModel = productsModelFromMap(jsonString);
-
 
 import 'dart:convert';
 
@@ -15,6 +7,7 @@ class ProductsModel {
         required this.title,
         required this.price,
         required this.description,
+        required this.category,
         required this.image,
         required this.rating,
     });
@@ -23,6 +16,7 @@ class ProductsModel {
     String title;
     double price;
     String description;
+    Category category;
     String image;
     Rating rating;
 
@@ -35,6 +29,7 @@ class ProductsModel {
         title: json["title"],
         price: json["price"].toDouble(),
         description: json["description"],
+        category: json["category"],
         image: json["image"],
         rating: Rating.fromMap(json["rating"]),
     );
@@ -44,10 +39,14 @@ class ProductsModel {
         "title": title,
         "price": price,
         "description": description,
+        "category": category,
         "image": image,
         "rating": rating.toMap(),
     };
 }
+
+enum Category { MEN_S_CLOTHING, JEWELERY, ELECTRONICS, WOMEN_S_CLOTHING }
+
 
 
 class Rating {
@@ -73,3 +72,5 @@ class Rating {
         "count": count,
     };
 }
+
+

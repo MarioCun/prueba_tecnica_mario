@@ -17,8 +17,21 @@ class HomeScreenBodyWidget extends StatelessWidget {
       child: Column(
         children: [
           HeaderBodyWidget(size: size),
+
+         SingleChildScrollView (
+          scrollDirection: Axis.horizontal,
+            child: Row(
+              children: const [
+                CardProductWidget(imagen: 'assets/hombre.jpg', title: 'E-commerce',),
+                CardProductWidget(imagen: 'assets/hombre.jpg', title: 'E-commerce',),
+                CardProductWidget(imagen: 'assets/hombre.jpg', title: 'E-commerce',),
+                CardProductWidget(imagen: 'assets/hombre.jpg', title: 'E-commerce',),
+                CardProductWidget(imagen: 'assets/hombre.jpg', title: 'E-commerce',),
+              ],
+            ),
+          ),
     
-          const CardProductWidget(),
+           
          
           
           _TargetCenter(size: size),
@@ -29,20 +42,40 @@ class HomeScreenBodyWidget extends StatelessWidget {
     
           const _TextTitle(text: 'Trending Today',),
 
-          Container(
-            margin: const EdgeInsets.symmetric(horizontal: 23, vertical: 10),
-            height: size.height * 0.2,
-            width: double.infinity,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-              color: pPrimarycolor
-            )
-            ,
-
-          )
+          _TargetFinal(size: size)
 
         ],
       ),
+    );
+  }
+}
+
+class _TargetFinal extends StatelessWidget {
+  const _TargetFinal({
+    super.key,
+    required this.size,
+  });
+
+  final Size size;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 23, vertical: 10),
+      height: size.height * 0.2,
+      width: double.infinity,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20),
+        color: pPrimarycolor
+      ),
+      child:ClipRRect(
+        borderRadius: BorderRadius.circular(20),
+        child: Image.asset(
+          'assets/ropa-fondo-2.jpg', 
+          fit: BoxFit.cover ,),
+      )
+      ,
+
     );
   }
 }
@@ -67,10 +100,6 @@ class _TextTitle extends StatelessWidget {
       ));
   }
 }
-
-
-
-
 
 class _TargetCenter extends StatelessWidget {
   const _TargetCenter({

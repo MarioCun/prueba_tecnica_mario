@@ -8,16 +8,16 @@ class GripViewWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Table(
-      children:  [
+      children: const [
         TableRow(children: [
-          _ContainerRow(),
-          _ContainerRow(),
-          _ContainerRow(),
+          _ContainerRow(imagen: 'assets/moda.jpg',),
+          _ContainerRow(imagen: 'assets/mujer.jpg',),
+          _ContainerRow(imagen: 'assets/hombre.jpg',),
         ]),
          TableRow(children: [
-          _ContainerRow(),
-          _ContainerRow(),
-          _ContainerRow(),
+          _ContainerRow(imagen: 'assets/chaqueta.jpg',),
+          _ContainerRow(imagen: 'assets/hombre2.jpg',),
+          _ContainerRow(imagen: 'assets/moda23.jpg',),
         ]),
       ],
     );
@@ -27,7 +27,9 @@ class GripViewWidget extends StatelessWidget {
 class _ContainerRow extends StatelessWidget {
   
   
-  
+  final String imagen;
+
+  const _ContainerRow({super.key, required this.imagen});
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +42,12 @@ class _ContainerRow extends StatelessWidget {
         color: pPrimarycolor,
         borderRadius: BorderRadius.circular(20)
       ),
-      child: Image.asset('assets/logo.png')
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(20),
+        child: Image.asset(
+          imagen, 
+          fit: BoxFit.cover, ),
+      )
       
     );
   }

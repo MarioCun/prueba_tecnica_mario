@@ -1,36 +1,18 @@
+//? importaciones de terceros
 import 'package:flutter/material.dart';
 
 class CardProductWidget extends StatelessWidget {
+
+  final String imagen;
+  final String title;
    
-  const CardProductWidget({Key? key}) : super(key: key);
+  const CardProductWidget({
+    Key? key, 
+    required this.imagen, 
+    required this.title})
+    : super(key: key);
   
-  @override
-  Widget build(BuildContext context) {
-    
-
-    return Container(
-        margin: EdgeInsets.only(top: 10,  ) ,
-        width: double.infinity,
-        height: 180,
-        child: Expanded (
-          child: ListView.builder(
-            scrollDirection: Axis.horizontal,
-            itemCount: 20,
-            itemBuilder: (BuildContext context, int index) {
-              return _Card();;
-            },
-          ),
-        ),
-    );
-    
-  }
-}
-
-class _Card extends StatelessWidget {
-  const _Card({
-    super.key,
-  });
-
+ 
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -51,7 +33,9 @@ class _Card extends StatelessWidget {
           ),
           child: Stack(
             children: [
-              Image.asset('assets/logo.png', fit: BoxFit.cover),
+             ClipRRect (
+              borderRadius: BorderRadius.circular(25),
+              child: Image.asset(imagen, fit: BoxFit.cover)),
               Positioned(
                 bottom: 0,
                 left: 0,
@@ -63,9 +47,9 @@ class _Card extends StatelessWidget {
                     color: Colors.white,
                     borderRadius: BorderRadius.only(bottomRight: Radius.circular(20), bottomLeft: Radius.circular(20))
                   ),
-                  child:  const FittedBox(
+                  child:  FittedBox(
                     fit:  BoxFit.contain,
-                    child: Text('Producto', style:  TextStyle( fontSize: 20 ),),
+                    child: Text(title, style: const  TextStyle( fontSize: 20 ),),
                   ),
                 ),
               )

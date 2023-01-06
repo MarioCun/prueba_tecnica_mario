@@ -6,6 +6,8 @@ import 'package:prueba_tecnica/screens/screens.dart';
 
 void main() => runApp(const MyApp());
 
+
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
